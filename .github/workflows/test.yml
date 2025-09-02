@@ -6,6 +6,21 @@ on:
         description: 'An example input'
         required: true
         default: 'default value'
+      int_input:
+        description: 'sometimes the number of the beast'
+        required: true
+        default: 666
+        type: number
+      choicee_input:
+        description: 'A choice input'
+        required: false
+        default: 'hest'
+        type: choice
+        options:
+          - hest
+          - ged
+          - fisk 
+
   push:
     branches:
       - main
