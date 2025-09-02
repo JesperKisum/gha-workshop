@@ -1,0 +1,15 @@
+# manual event
+on:
+  workflow_dispatch:
+    inputs:
+      example_input:
+        description: 'An example input'
+        required: true
+        default: 'default value'
+  push:
+    branches:
+      - main
+  steps:
+    - name: say hi
+      run: echo "hi"  
+      
