@@ -44,7 +44,7 @@ jobs:
     steps:
       - name: continue conversation
         run: |
-          echo 'conversation continued ${{ github.event.inputs.int_input }} test'
+          echo 'conversation continued ´${{ github.event.inputs.int_input }}´ test'
   some_job:
     runs-on: ubuntu-latest
     needs: continue_conversation
