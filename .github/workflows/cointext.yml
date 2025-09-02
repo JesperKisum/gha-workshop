@@ -1,22 +1,26 @@
-name: Test
-
+name: Context Example
 on:
   workflow_dispatch:
     inputs:
       example_input:
         description: 'An example input'
         required: true
-        default: 'Hello, World!'
-      enable_feature:
-        description: 'Enable feature'
-        required: false
-        type: boolean
-        default: false
-
+        default: 'default value'
+  push:
+    branches:
+      - main
 jobs:
-  test_job:
+  show-vars:
     runs-on: ubuntu-latest
     steps:
-      - name: Run tests
+      - name: Print common variables
         run: |
-          echo "Running tests with input: ${{ inputs.example_input }}"
+          echo "GITHUB_REPOSITORY: ${{ github.repository }}"
+          echo "GITHUB_REF: ${{ github.ref }}"
+          echo "GITHUB_SHA: ${{ github.sha }}"
+          echo "GITHUB_ACTOR: ${{ github.actor }}"
+          echo "GITHUB_WORKFLOW: ${{ github.workflow }}"
+          echo "GITHUB_EVENT_NAME: ${{ github.event_name }}"
+          echo "GITHUB_RUN_ID: ${{ github.run_id }}"
+          echo "GITHUB_RUN_NUMBER: ${{ github.run_number }}"
+          echo "GITHUB_JOB: ${{ github.job }}"
