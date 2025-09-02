@@ -25,6 +25,12 @@ on:
     branches:
       - main
 jobs:
+  wrong_order:
+    runs-on: ubuntu-latest
+    needs: the_one_with_python
+    steps:
+      - name: wrong order
+        run: echo "this job has a wrong needs order"
   say_hi:
     runs-on: ubuntu-latest
     steps:
