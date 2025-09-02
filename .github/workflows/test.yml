@@ -43,4 +43,5 @@ jobs:
     needs: acknowledge_hi
     steps:
       - name: continue conversation
-        run: echo 'conversation continued ${{ github.event.inputs.int_input }}'
+        run: |
+          echo 'conversation continued ${{ github.event.inputs.int_input }} test'
